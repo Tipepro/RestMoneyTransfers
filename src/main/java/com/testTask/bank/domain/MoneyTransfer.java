@@ -2,21 +2,15 @@ package com.testTask.bank.domain;
 
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 
-@XmlRootElement
 public class MoneyTransfer {
-    @XmlElement
     @NotNull
     @DecimalMin(value = "0")
     private Integer accountNumberFrom;
-    @XmlElement
     @NotNull
     @DecimalMin(value = "0")
     private Integer accountNumberTo;
-    @XmlElement
     @NotNull
     @DecimalMin(value = "0", inclusive = false)
     private BigDecimal amount;

@@ -2,20 +2,15 @@ package com.testTask.bank.domain;
 
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-@XmlRootElement
 public class Account {
     private final Lock lock = new ReentrantLock();
-    @XmlElement
     @NotNull
     @DecimalMin(value = "0")
     private Integer accountNumber;
-    @XmlElement
     @NotNull
     @DecimalMin(value = "0")
     private BigDecimal amount;
